@@ -4,27 +4,28 @@ public class LargestPrime {
             return -1;
         }else{
 
-            int temp =1;
-            for (int i =1; i<= number; i++){
-                int count = 0;
-                if(number % i ==0 ){
-                    if (i != 1){
-                        for (int j =2; j<i ; j++){
-                            if(i%j==0){
-                                count++;
-                            }
-                            if (count == 0){
-                                temp = i;
-                            }
-                        }
+            int temp = number;
 
-                    }else {
-                        continue;
+            for (int j =2; j<number ; j++){
+
+                if (number % j ==0){
+
+                    int count = 0;
+                    for (int i = 2 ; i <= j ; i++){
+                        if(j%i ==0){
+                            count++;
+
+                        }
+                    } if(count == 1){
+                        temp = j;
                     }
 
                 }
+
             }
+
             return temp;
+
         }
     }
 }
